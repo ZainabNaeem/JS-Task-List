@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Days until Christmas</title>
+    <style>
+      .sty {
+        margin: 10px 200px 0 400px;
+        background: rgb(87, 65, 83);
+        background: radial-gradient(
+          circle,
+          rgba(87, 65, 83, 1) 6%,
+          rgba(181, 168, 189, 0.9809173669467787) 99%
+        );
+        padding: 30px;
+        width: 600px;
+        color: white;
+        font-size: 18px;
+        line-height: 24px;
+      }
+      .sty > h1 {
+        text-align: center;
+      }
+      .sty > p {
+        text-align: center;
+        border: 1px solid rgb(201, 192, 192);
+        width: 400px;
+        margin-left: 100px;
+      }
+      button {
+        width: 200px;
+        height: 35px;
+        margin-left: 180px;
+        margin-top: 10px;
+        background-color: rgb(110, 104, 104);
+        border: none;
+        color: white;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sty">
+      <h1>JavaScript Task-7</h1>
+      <h3>
+        Write a JavaScript program to calculate days left until next Christmas.
+      </h3>
+
+      <p id="demo"></p>
+      <button onclick="funct()">GUESS</button>
+    </div>
+    <script>
+      function funct() {
+        function removeTime(date = new Date()) {
+          return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+        }
+        var date2 = new Date("December 25, 2023");
+        var diff = date2.getTime() - removeTime();
+        var day = diff / (1000 * 60 * 60 * 24);
+        document.getElementById(
+          "demo"
+        ).innerHTML = `${day} days left in christmas`;
+      }
+    </script>
+  </body>
+</html>

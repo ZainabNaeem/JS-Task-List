@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Try your Luck!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Comfortaa", cursive;
+      }
+      input {
+        width: 400px;
+        height: 30px;
+        margin-left: 70px;
+        background-color: rgb(219, 215, 215);
+        border: none;
+        /* margin: 50px 0px 0px 50px; */
+      }
+      button {
+        width: 200px;
+        height: 35px;
+        margin-left: 180px;
+        margin-top: 10px;
+        background-color: rgb(110, 104, 104);
+        border: none;
+        color: white;
+        font-weight: bold;
+      }
+      .sty {
+        margin: 10px 200px 0 400px;
+        background: rgb(87, 65, 83);
+        background: radial-gradient(
+          circle,
+          rgba(87, 65, 83, 1) 6%,
+          rgba(181, 168, 189, 0.9809173669467787) 99%
+        );
+        padding: 30px;
+        width: 600px;
+        color: white;
+        font-size: 18px;
+        line-height: 24px;
+      }
+      .sty > h1 {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="sty">
+      <h1>Javascript Task-2</h1>
+      <ul>
+        <li>Choose any number from 0 to 10</li>
+        <li>The computer will randomly choose a number from 0 to 10</li>
+        <li>
+          If the number you choose <strong>MATCHES</strong> the computer
+          generated number you will <strong>WIN</strong>
+        </li>
+        <li>Best of Luck!</li>
+      </ul>
+      <input type="number" placeholder="Enter number from 0 to 10" id="num" />
+      <br />
+      <button onclick="func()" id="demo">TRY YOUR LUCK</button>
+      <!-- <p id="demo"></p> -->
+    </div>
+    <script>
+      function func() {
+        var number = +document.getElementById("num").value;
+        var guess = Math.floor(Math.random() * 11);
+        if (number == guess) {
+          text = "GooD WorK!";
+        } else if (number > 10) {
+          text = "invalid entry!";
+        } else {
+          text = "Better Luck Next Time!";
+        }
+        document.getElementById("demo").innerHTML = text;
+      }
+      // }
+      // let number = prompt("Enter any number from 0 to 10!");
+      // let guess = Math.floor(Math.random() * 11);
+      // if (number == guess) {
+      //   alert("GooD WorK!");
+      // } else {
+      //   alert("Better Luck Next Time!");
+      // }
+    </script>
+  </body>
+</html>

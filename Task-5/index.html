@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature conversion</title>
+    <style>
+      body {
+        font-family: "Comfortaa", cursive;
+      }
+      input {
+        width: 400px;
+        height: 30px;
+        margin-left: 70px;
+        background-color: rgb(219, 215, 215);
+        border: none;
+        /* margin: 50px 0px 0px 50px; */
+      }
+      button {
+        width: 200px;
+        height: 35px;
+        margin-left: 180px;
+        margin-top: 10px;
+        background-color: rgb(110, 104, 104);
+        border: none;
+        color: white;
+        font-weight: bold;
+      }
+      .sty {
+        margin: 10px 200px 0 400px;
+        background: rgb(87, 65, 83);
+        background: radial-gradient(
+          circle,
+          rgba(87, 65, 83, 1) 6%,
+          rgba(181, 168, 189, 0.9809173669467787) 99%
+        );
+        padding: 30px;
+        width: 600px;
+        color: white;
+        font-size: 18px;
+        line-height: 24px;
+      }
+      .sty > h1 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sty">
+      <h1>Javascript Task-5</h1>
+      <ul>
+        <li>
+          Use Javascript program to convert Temperature from and to Celsius,
+          Fahrenheit.
+        </li>
+      </ul>
+
+      <input
+        type="number"
+        id="demo"
+        onchange="func()"
+        oninput="func()"
+        placeholder="Enter temperature in Fahrenheit"
+      />
+      <br /><br />
+      <!-- <button onclick="func()">Convert</button> -->
+      <input
+        type="number"
+        id="demo1"
+        onchange="funct()"
+        oninput="funct()"
+        placeholder="Enter temperature in Celsius
+      "
+      />
+      <!-- <button onchange="funct()">Convert</button> -->
+      <p id="tempF"></p>
+      <p id="tempC"></p>
+    </div>
+    <script>
+      function func() {
+        let C, F;
+        C = +document.getElementById("demo").value;
+        F = C * (9 / 5) + 32;
+        document.getElementById("tempF").innerHTML = `${C}°C is ${F}°F`;
+      }
+      function funct() {
+        let F, C;
+        F = +document.getElementById("demo1").value;
+        C = (F - 32) * (5 / 9);
+        document.getElementById("tempC").innerHTML = `${F}°F is ${C}°C`;
+      }
+    </script>
+  </body>
+</html>

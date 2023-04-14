@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Area of Triangle</title>
+    <style>
+      .sty {
+        margin: 10px 200px 0 400px;
+        background: rgb(87, 65, 83);
+        background: radial-gradient(
+          circle,
+          rgba(87, 65, 83, 1) 6%,
+          rgba(181, 168, 189, 0.9809173669467787) 99%
+        );
+        padding: 30px;
+        width: 600px;
+        color: white;
+        font-size: 18px;
+        line-height: 24px;
+      }
+      .sty > h1 {
+        text-align: center;
+      }
+      .sty > p {
+        text-align: center;
+        border: 1px solid rgb(201, 192, 192);
+        width: 400px;
+        margin-left: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sty">
+      <h1>JavaScript Task-4</h1>
+      <ul>
+        <li>Calculate the area of triangle using JavaScript.</li>
+        <li>
+          Length of the sides are
+          <ul>
+            <li>a = 5</li>
+            <li>b = 6</li>
+            <li>c = 7</li>
+          </ul>
+        </li>
+        <li>use Aeron Formula A = square root of (s*(s-a)(s-b)(s-c))</li>
+        <li>Where s = (a + b + c) / 2</li>
+      </ul>
+      <p id="cal"></p>
+    </div>
+    <!-- <button onclick="func()">click</button> -->
+    <script>
+      let a, b, c, s;
+      a = 5;
+      b = 6;
+      c = 7;
+      s = (a + b + c) / 2;
+
+      let A = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+      document.getElementById("cal").innerHTML = `Area of Triangle = ${A}`;
+    </script>
+  </body>
+</html>

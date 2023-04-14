@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date and Time</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;800&display=swap" rel="stylesheet">    <link
+      href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: 'Orbitron', sans-serif;
+      }
+      .sty {
+        margin: 10px 200px 0 400px;
+        background: rgb(87, 65, 83);
+        background: radial-gradient(
+          circle,
+          rgba(87, 65, 83, 1) 6%,
+          rgba(181, 168, 189, 0.9809173669467787) 99%
+        );
+        padding: 30px;
+        width: 600px;
+        color: white;
+        font-size: 18px;
+        line-height: 24px;
+      }
+      .sty > h1 {
+        text-align: center;
+      }
+      .sty > p {
+        text-align: center;
+        border: 1px solid rgb(201, 192, 192);
+        width: 400px;
+        margin-left: 100px;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <footer>
+      <div class="sty">
+        <h1>Date and Time Display</h1>
+        <p id="demo"></p>
+        <p id="demo1" class="st1"></p>
+      </div>
+     
+    <script>
+      const days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
+
+      const d = new Date();
+      let day = days[d.getDay()];
+      document.getElementById("demo").innerHTML =  `Today is  ${day}`
+
+      var hour = d.getHours();
+      var minute = d.getMinutes();
+      var second = d.getSeconds();
+
+      var ampm = hour >= 12 ? "PM" : "AM";
+      hour = hour >= 12 ? hour - 12 : hour;
+
+      document.getElementById("demo1").innerHTML= `Time : ${hour} ${ampm} : ${minute} : ${second }`
+    </script>
+  </body>
+</html>

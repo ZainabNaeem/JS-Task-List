@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiplication and Division</title>
+    <style>
+      .sty {
+        margin: 10px 200px 0 400px;
+        background: rgb(87, 65, 83);
+        background: radial-gradient(
+          circle,
+          rgba(87, 65, 83, 1) 6%,
+          rgba(181, 168, 189, 0.9809173669467787) 99%
+        );
+        padding: 30px;
+        width: 600px;
+        color: white;
+        font-size: 18px;
+        line-height: 24px;
+      }
+      .sty > h1 {
+        text-align: center;
+      }
+      .sty > p {
+        text-align: left;
+        width: 400px;
+        margin-left: 100px;
+      }
+      input {
+        width: 400px;
+        height: 30px;
+        margin-left: 70px;
+        background-color: rgb(219, 215, 215);
+        border: none;
+        display: inline-block;
+        /* margin: 50px 0px 0px 50px; */
+      }
+      label {
+        margin: 0px;
+        font-size: 24px;
+        display: inline-block;
+      }
+      button {
+        width: 200px;
+        height: 35px;
+        margin-left: 180px;
+        margin-top: 10px;
+        background-color: rgb(110, 104, 104);
+        border: none;
+        color: white;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sty">
+      <h1>Javascript Task-8</h1>
+      <p>
+        Write a JavaScript program to calculate multiplication and division of
+        two numbers (input from user).
+      </p>
+      <form onchange="operation(this)">
+        <input type="number" name="" id="num1" />
+        <br />
+        <br />
+        <input type="number" id="num2" />
+      </form>
+      <input
+        type="checkbox"
+        id="myCheck"
+        onclick="divides()"
+        style="width: 20px"
+      />
+      <label for="myCheck">Divide:</label>
+      <input type="text" id="division" style="display: none" />
+      <br />
+      <input
+        type="checkbox"
+        id="Check"
+        onclick="Multiply()"
+        style="width: 20px; padding: 0"
+      />
+      <label for="myCheck">Multiply:</label>
+      <input type="text" id="multiplication" style="display: none" />
+    </div>
+    <script>
+      const num1Elem = document.getElementById("num1");
+      const num2Elem = document.getElementById("num2");
+      const divided = document.getElementById("division");
+      const Multiple = document.getElementById("multiplication");
+      function operation(event) {
+        divided.value = num1Elem.value / num2Elem.value;
+        Multiple.value = num1Elem.value * num2Elem.value;
+      }
+      function divides() {
+        var checkBox = document.getElementById("myCheck");
+        if (checkBox.checked == true) {
+          divided.style.display = "block";
+        } else {
+          divided.style.display = "none";
+        }
+      }
+      function Multiply() {
+        var checkBox = document.getElementById("Check");
+
+        if (checkBox.checked == true) {
+          Multiple.style.display = "block";
+        } else {
+          Multiple.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>

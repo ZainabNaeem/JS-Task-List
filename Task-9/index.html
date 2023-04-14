@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leap Year</title>
+    <style>
+      .sty {
+        margin: 10px 200px 0 400px;
+        background: rgb(87, 65, 83);
+        background: radial-gradient(
+          circle,
+          rgba(87, 65, 83, 1) 6%,
+          rgba(181, 168, 189, 0.9809173669467787) 99%
+        );
+        padding: 30px;
+        width: 600px;
+        color: white;
+        font-size: 18px;
+        line-height: 24px;
+      }
+      .sty > h1 {
+        text-align: center;
+      }
+      label {
+        margin-left: 70px;
+      }
+      input {
+        width: 300px;
+        height: 20px;
+        border-radius: 5px;
+        border: none;
+        background-color: rgb(184, 183, 183);
+      }
+      button {
+        margin-top: 10px;
+        margin-left: 250px;
+        width: 80px;
+        height: 30px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sty">
+      <h1>Javascript Task-9</h1>
+      <p>
+        Javascript program to determine wheather a given year is leap year or
+        not.
+      </p>
+      <label for="">Enter Year</label>
+      <input type="number" id="year" />
+      <br />
+      <button onclick="leapY()">Guess</button>
+      <p id="answer"></p>
+    </div>
+    <script>
+      function leapY() {
+        let year = +document.getElementById("year").value;
+        if (year % 100 === 0 ? year % 400 === 0 : year % 4 === 0) {
+          document.getElementById(
+            "answer"
+          ).innerHTML = `${year} is a leap year`;
+        } else if (year === 0) {
+          document.getElementById("answer").innerHTML = `InValid Entry`;
+        } else {
+          document.getElementById(
+            "answer"
+          ).innerHTML = `${year} is not a leap year`;
+        }
+      }
+    </script>
+  </body>
+</html>

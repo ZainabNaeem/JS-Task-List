@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formatted Dates</title>
+    <style>
+      .sty {
+        margin: 10px 200px 0 400px;
+        background: rgb(87, 65, 83);
+        background: radial-gradient(
+          circle,
+          rgba(87, 65, 83, 1) 6%,
+          rgba(181, 168, 189, 0.9809173669467787) 99%
+        );
+        padding: 30px;
+        width: 600px;
+        color: white;
+        font-size: 18px;
+        line-height: 24px;
+      }
+      .sty1 {
+        display: inline-flex;
+        /* flex-direction: row; */
+        flex-wrap: wrap;
+        flex-flow: row;
+        line-height: 30px;
+      }
+      .sty > h1 {
+        text-align: center;
+        justify-content: center;
+      }
+      .sty1 > div {
+        flex: auto;
+        margin-left: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sty">
+      <h1>JavaScript Task-10</h1>
+      <div class="sty1">
+        <div>
+          <ul>
+            Write date in following formats:
+            <li>mm-dd-yyyy</li>
+            <li>dd-mm-yyyy</li>
+            <li>mm/dd/yyyy</li>
+            <li>dd/mm/yyyy</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            Javascript Formatted Dates
+            <li id="format1"></li>
+            <li id="format2"></li>
+            <li id="format3"></li>
+            <li id="format4"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      var today = new Date();
+      var dd = today.getDate();
+      var mm = today.getMonth() + 1;
+      var yyyy = today.getFullYear();
+      //   if (dd < 10) {
+      //     dd = "0" + dd;
+      //   }
+      //   if (mm < 10) {
+      //     mm = "0" + mm;
+      //   }
+      today = mm + "-" + dd + "-" + yyyy;
+      document.getElementById("format1").innerHTML = today;
+      today = dd + "-" + mm + "-" + yyyy;
+      document.getElementById("format2").innerHTML = today;
+      today = mm + "/" + dd + "/" + yyyy;
+      document.getElementById("format3").innerHTML = today;
+      today = dd + "/" + mm + "/" + yyyy;
+      document.getElementById("format4").innerHTML = today;
+    </script>
+  </body>
+</html>
