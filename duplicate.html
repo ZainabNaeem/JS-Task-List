@@ -54,24 +54,33 @@
       h1 {
         text-align: center;
       }
+      #menu.list {
+        display: block;
+      }
+      main.list.task-list {
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid black;
+      }
     </style>
   </head>
   <body>
     <h1>Javascript Task</h1>
-    <div class="container">
-      <div class="radiobtn">
-        <input type="radio" id="ascending" name="task-order" />
-        <label for="ascending">Ascending</label>
-        <input type="radio" id="descending" name="task-order" />
-        <label for="descending">Descending</label>
-      </div>
-      <div id="menu">
-        <ul id="submenu"></ul>
-        <iframe name="iframes-list" frameborder="0"></iframe>
-      </div>
-    </div>
+    <section class="sort-option">
+      <button class="sort-name">Sort by name</button>
+      <button class="sort-id">Sort by Id</button>
+    </section>
+    <section id="menu">
+      <ul id="submenu"></ul>
+      <iframe name="iframes-list" frameborder="0"></iframe>
+    </section>
+
     <script>
-      const tasklist = [
+      const list = document.querySelector("#submenu");
+      const ascend_Btn = document.querySelector(".sort-option .sort-name");
+      const decend_Btn = document.querySelector(".sort-option .sort-id");
+      console.log(list);
+      let tasklist = [
         {
           id: 1,
           name: "Date and Time Display",
@@ -123,48 +132,42 @@
           href: "./Task-10/index.html",
         },
       ];
-
-      for (var i = 0; i < tasklist.length; i++) {
-        var li = document.createElement("li");
-        var link = document.createElement("a");
-        var textnode = document.createTextNode(tasklist[i].name);
-        link.setAttribute("href", tasklist[i].href);
-        link.setAttribute("target", "iframes-list");
-        link.appendChild(textnode);
-        li.appendChild(link);
-
-        document.getElementById("submenu").appendChild(li);
+      let desc = false;
+      ascend_Btn.addEventListener("click", () => {
+        let array = sort_arry_by(tasklist, "name", desc);
+        displayList(array);
+        desc = !desc;
+      });
+      decend_Btn.addEventListener("click", () => {
+        let array = sort_arry_by(tasklist, "id", desc);
+        displayList(array);
+        desc = !desc;
+      });
+      function sort_arry_by(array, sort, desc) {
+        array.sort(function (a, b) {
+          if (a < b) return -1;
+          if (a > b) return 1;
+          return 0;
+        });
+        if (desc) array.reverse();
+        return array;
       }
-      const ul = document.getElementById("submenu");
-      const list = ul.querySelectorAll("li");
+      function displayList(array = []) {
+        list.innerHTML = "";
+        for (let i = 0; i < array.length; i++) {
+          let item = array[i];
+          let tasks = document.createElement("li");
+          let link = document.createElement("a");
+          var textnode = document.createTextNode(item.name);
+          link.setAttribute("href", item.href);
+          link.setAttribute("target", "iframes-list");
+          link.appendChild(textnode);
+          tasks.appendChild(link);
 
-      const Ascend = (list) =>
-        [...list].sort((a, b) => {
-          const A = a.textContent;
-          const B = b.textContent;
-          if (A < B) {
-            return -1;
-          }
-        });
-
-      const Decend = (list) =>
-        [...list].sort((a, b) => {
-          const A = a.textContent;
-          const B = b.textContent;
-          if (A > B) {
-            return -1;
-          }
-        });
-      var asc = document.getElementById("ascending");
-      asc.addEventListener("click", function () {
-        console.log(">>> list:", list);
-        console.log(">>> asc:", ...Ascend(list));
-        ul.append(...Ascend(list));
-      });
-      var dec = document.getElementById("descending");
-      dec.addEventListener("click", function () {
-        ul.append(...Decend(list));
-      });
+          document.getElementById("submenu").appendChild(tasks);
+        }
+      }
+      displayList(tasklist);
     </script>
   </body>
 </html>
