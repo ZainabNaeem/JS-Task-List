@@ -1,0 +1,52 @@
+[
+    {
+      "id": 1,
+      "name": "Date and Time Display",
+      "href": "./Task-1/index.html",
+    },
+    {
+      "id": 2,
+      "name": "Try your Luck",
+      "href": "./Task-2/index.html",
+    },
+    {
+      "id": 3,
+      "name": "Difference with 13",
+      "href": "./Task-3/index.html",
+    },
+    {
+      "id": 4,
+      "name": "Area of Triangle",
+      "href": "./Task-4/index.html",
+    },
+    {
+      "id": 5,
+      "name": "Temperature Conversion",
+      "href": "./Task-5/index.html",
+    },
+    {
+      "id": 6,
+      "name": "Website URL",
+      "href": "./Task-6/index.html",
+    },
+    {
+      "id": 7,
+      "name": "Days until next Christmas",
+      "href": "./Task-7/index.html",
+    },
+    {
+      "id": 8,
+      "name": "Division and Multiplication",
+      "href": "./Task-8/index.html",
+    },
+    {
+      "id": 9,
+      "name": "Leap Year",
+      "href": "./Task-9/index.html",
+    },
+    {
+      "id": 10,
+      "name": "Formatted Dates",
+      "href": "./Task-10/index.html",
+    },
+  ]
