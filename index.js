@@ -2,20 +2,32 @@ import tasks from "./tasks.json" assert { type: "json" };
 
 function displayList() {
   for (let i = 0; i < tasks.length; i++) {
-    let obj = tasks[i];
-    console.log(obj.name);
     const list = document.createElement("li");
     const link = document.createElement("a");
+    let obj = tasks[i];
     link.setAttribute("href", obj.href);
-    link.setAttribute("target", "task-iframe");
+    link.setAttribute("target", "iframes-list");
     link.innerHTML = obj.name;
     list.appendChild(link);
     document.getElementById("submenu").appendChild(list);
   }
-  // document.getElementById("menu").innerHTML = list;
-  // console.log(list);
 }
 displayList();
+function atoz(tasks) {
+  for (let i = 0; i < tasks.length; i++) {
+    for (var j = 0; j < i; j++) {
+      let asce = tasks[i];
+      if (asce.name < tasks[j]) {
+        var x = asce.name;
+        asce.name = tasks[j];
+        tasks[j] = x;
+      }
+    }
+  }
+  console.log(tasks);
+}
+let ascend_btn = document.getElementById("ascending");
+ascend_btn.addEventListener("click", atoz);
 // function displayList() {
 //   const item = document.createElement("li");
 //   const link = document.createElement("a");
