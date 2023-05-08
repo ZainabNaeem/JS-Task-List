@@ -15,6 +15,9 @@ function sort(order) {
 
   // Append sorted tasks to menu node
   sortedTasks.forEach((tasks) => {
+    const are = `<li><a href="${tasks.href}" target="task-iframe"></a></li>`
+    list.appendChild(are)
+    
     const item = document.createElement("li");
     const link = document.createElement("a");
     link.setAttribute("href", tasks.href);
@@ -23,6 +26,9 @@ function sort(order) {
     item.appendChild(link);
     list.appendChild(item);
   });
+
+
+
 }
 
 document.querySelector("#ascending");
