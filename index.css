@@ -1,42 +1,43 @@
 body {
-    margin-left: 10px;
-    font-family: "Comfortaa", cursive;
-  }
+  margin-left: 10px;
+  font-family: "Comfortaa", cursive;
+}
 
-  #menu {
-    display: flex;
-  }
-  #submenu li {
-    list-style: none;
-    margin-top: 5px;
-    padding: 10px;
-    border: 1px solid black;
-    background: rgb(87, 65, 83);
-    background: radial-gradient(
-      circle,
-      rgba(87, 65, 83, 1) 6%,
-      rgba(181, 168, 189, 0.9809173669467787) 99%
-    );
-  }
-  #submenu li a {
-    text-decoration: none;
-    color: white;
-  }
-  #submenu li :hover {
-    color: black;
-    font-weight: bold;
-  }
-  iframe {
-    height: 95vh;
-    width: 100%;
-  }
-  input {
-    margin-top: 20px;
-  }
-  .search {
-    width: 250px;
-    padding: 10px;
-  }
-  h1 {
-    text-align: center;
-  }
+#submenu {
+  display: flex;
+}
+#menu li {
+  display: flex;
+  list-style: none;
+  margin-top: 5px;
+  padding: 10px;
+  border: 1px solid black;
+  background: rgb(87, 65, 83);
+  background: radial-gradient(
+    circle,
+    rgba(87, 65, 83, 1) 6%,
+    rgba(181, 168, 189, 0.9809173669467787) 99%
+  );
+}
+#menu li a {
+  text-decoration: none;
+  color: white;
+}
+#menu li :hover {
+  color: black;
+  font-weight: bold;
+}
+iframe {
+  height: 95vh;
+  width: 100%;
+}
+input {
+  margin-top: 20px;
+}
+.search {
+  width: 250px;
+  padding: 10px;
+}
+h1 {
+  text-align: center;
+}
