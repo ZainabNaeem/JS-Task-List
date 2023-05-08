@@ -2,10 +2,8 @@ import tasks from "./tasks.json" assert { type: "json" };
 
 let list = document.getElementById("menu");
 function sort(order) {
-  // Clear all items from menu
   document.getElementById("menu").innerHTML = "";
 
-  // Sort tasks according to name in given order
   const sortedTasks = tasks.sort((a, b) => {
     let value = 0;
     if (a.name > b.name) value = 1;
