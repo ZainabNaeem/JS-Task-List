@@ -10,161 +10,22 @@
       href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&display=swap"
       rel="stylesheet"
     />
-
-    <style>
-      body {
-        margin-left: 10px;
-        font-family: "Comfortaa", cursive;
-      }
-
-      #menu {
-        display: flex;
-      }
-      #submenu li {
-        list-style: none;
-        margin-top: 5px;
-        padding: 10px;
-        border: 1px solid black;
-        background: rgb(87, 65, 83);
-        background: radial-gradient(
-          circle,
-          rgba(87, 65, 83, 1) 6%,
-          rgba(181, 168, 189, 0.9809173669467787) 99%
-        );
-      }
-      #submenu li a {
-        text-decoration: none;
-        color: white;
-      }
-      #submenu li :hover {
-        color: black;
-        font-weight: bold;
-      }
-      iframe {
-        height: 95vh;
-        width: 100%;
-      }
-      input {
-        margin-top: 20px;
-      }
-      .search {
-        width: 250px;
-        padding: 10px;
-      }
-      h1 {
-        text-align: center;
-      }
-    </style>
+    <link rel="stylesheet" href="./index.css" />
   </head>
-  <body>
+  <body id="dis">
     <h1>Javascript Task</h1>
     <div class="container">
       <div class="radiobtn">
-        <input type="radio" id="ascending" name="task-order" />
+        <input type="radio" id="ascending" name="task-order" checked />
         <label for="ascending">Ascending</label>
         <input type="radio" id="descending" name="task-order" />
         <label for="descending">Descending</label>
       </div>
-      <div id="menu">
-        <ul id="submenu"></ul>
+      <div id="submenu">
+        <ul id="menu"></ul>
         <iframe name="iframes-list" frameborder="0"></iframe>
       </div>
     </div>
-    <script>
-      const tasklist = [
-        {
-          id: 1,
-          name: "Date and Time Display",
-          href: "./Task-1/index.html",
-        },
-        {
-          id: 2,
-          name: "Try your Luck",
-          href: "./Task-2/index.html",
-        },
-        {
-          id: 3,
-          name: "Difference with 13",
-          href: "./Task-3/index.html",
-        },
-        {
-          id: 4,
-          name: "Area of Triangle",
-          href: "./Task-4/index.html",
-        },
-        {
-          id: 5,
-          name: "Temperature Conversion",
-          href: "./Task-5/index.html",
-        },
-        {
-          id: 6,
-          name: "Website URL",
-          href: "./Task-6/index.html",
-        },
-        {
-          id: 7,
-          name: "Days until next Christmas",
-          href: "./Task-7/index.html",
-        },
-        {
-          id: 8,
-          name: "Division and Multiplication",
-          href: "./Task-8/index.html",
-        },
-        {
-          id: 9,
-          name: "Leap Year",
-          href: "./Task-9/index.html",
-        },
-        {
-          id: 10,
-          name: "Formatted Dates",
-          href: "./Task-10/index.html",
-        },
-      ];
-
-      for (var i = 0; i < tasklist.length; i++) {
-        var li = document.createElement("li");
-        var link = document.createElement("a");
-        var textnode = document.createTextNode(tasklist[i].name);
-        link.setAttribute("href", tasklist[i].href);
-        link.setAttribute("target", "iframes-list");
-        link.appendChild(textnode);
-        li.appendChild(link);
-
-        document.getElementById("submenu").appendChild(li);
-      }
-      const ul = document.getElementById("submenu");
-      const list = ul.querySelectorAll("li");
-
-      const Ascend = (list) =>
-        [...list].sort((a, b) => {
-          const A = a.textContent;
-          const B = b.textContent;
-          if (A < B) {
-            return -1;
-          }
-        });
-
-      const Decend = (list) =>
-        [...list].sort((a, b) => {
-          const A = a.textContent;
-          const B = b.textContent;
-          if (A > B) {
-            return -1;
-          }
-        });
-      var asc = document.getElementById("ascending");
-      asc.addEventListener("click", function () {
-        console.log(">>> list:", list);
-        console.log(">>> asc:", ...Ascend(list));
-        ul.append(...Ascend(list));
-      });
-      var dec = document.getElementById("descending");
-      dec.addEventListener("click", function () {
-        ul.append(...Decend(list));
-      });
-    </script>
+    <script type="module" src="./main.js"></script>
   </body>
 </html>
