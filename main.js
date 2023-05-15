@@ -1,37 +1,47 @@
 import tasks from "./tasks.json" assert { type: "json" };
 
-let list = document.getElementById("menu");
-function sort(order) {
-  document.getElementById("menu").innerHTML = "";
+const list = document.getElementById("menu");
+const searchBar = document.getElementById("searchBar");
+const compareFn = (a, b) => {
+  if (a.id < b.id) {
+    return -1;
+  } else if (b.id < a.id) {
+    return 1;
+  } else {
+    return 0;
+  }
+};
 
-  const sortedTasks = tasks.sort((a, b) => {
-    let value = 0;
-    if (a.name > b.name) value = 1;
-    else if (a.name < b.name) value = -1;
-    else value = 0;
+let order = 1;
 
-    return order * value;
+document.querySelector("#descending").addEventListener("click", () => {
+  order = 1;
+});
+
+document.querySelector("#ascending").addEventListener("click", () => {
+  order = -1;
+});
+
+var render_lists = function (lists) {
+  const ItemList = tasks
+    .map(
+      (tasks) =>
+        `<li><a href="${tasks.href}" target="iframes-list"> <h4>${tasks.name}</h4></a></li>`
+    )
+    .join("");
+  list.innerHTML = ItemList;
+};
+render_lists(tasks);
+const render = () => {
+  searchBar.addEventListener("keyup", (task) => {
+    const searchString = task.target.value.toLowerCase();
+    const filteredTasks = tasks.filter((task) =>
+      task.name.toLowerCase().includes(searchString)
+    );
+
+    filteredTasks.sort((a, b) => compareFn(a, b) * order);
+    console.log(filteredTasks);
+    render_lists(filteredTasks);
   });
-
-  // Append sorted tasks to menu node
-  sortedTasks.forEach((tasks) => {
-    const are = `<li><a href="${tasks.href}" target="task-iframe"></a></li>`
-    list.appendChild(are)
-    
-    const item = document.createElement("li");
-    const link = document.createElement("a");
-    link.setAttribute("href", tasks.href);
-    link.setAttribute("target", "task-iframe");
-    link.innerHTML = tasks.name;
-    item.appendChild(link);
-    list.appendChild(item);
-  });
-
-
-
-}
-
-document.querySelector("#ascending");
-window.addEventListener("load", () => sort(1));
-document.querySelector("#descending").addEventListener("click", () => sort(-1));
-document.querySelector("#ascending").addEventListener("click", () => sort(1));
+};
+render();
