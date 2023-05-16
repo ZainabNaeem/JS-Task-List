@@ -12,19 +12,26 @@
     />
     <link rel="stylesheet" href="./index.css" />
   </head>
-  <body id="dis">
-    <h1>Javascript Task</h1>
-    <div class="container">
-      <div class="radiobtn">
-        <input type="radio" id="ascending" name="task-order" checked />
-        <label for="ascending">Ascending</label>
-        <input type="radio" id="descending" name="task-order" />
-        <label for="descending">Descending</label>
-      </div>
-      <div id="submenu">
+  <body>
+    <h1 id="dis">Javascript Task</h1>
+    <div id="submenu">
+      <div class="container">
+        <input
+          type="text"
+          name=""
+          id="searchBar"
+          placeholder="Search here..."
+        />
+        <br />
+        <br />
+        <div class="radiobtn">
+          <input type="radio" id="ascending"  name="order"/>
+          <label class="butn" class="task-order">Ascending</label>
+          <input type="radio" id="descending" name="order"      <label class="butn" class="task-order">Descending</label>
+        </div>
         <ul id="menu"></ul>
-        <iframe name="iframes-list" frameborder="0"></iframe>
       </div>
+      <iframe name="iframes-list" frameborder="0"></iframe>
     </div>
     <script type="module" src="./main.js"></script>
   </body>
