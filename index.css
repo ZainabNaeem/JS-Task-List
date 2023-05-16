@@ -9,9 +9,9 @@ body {
     rgba(87, 65, 83, 1) 6%,
     rgba(181, 168, 189, 0.9809173669467787) 99%
   );
-  height: 50px;
+  height: 60px;
   text-align: center;
-  line-height: 50px;
+  line-height: 55px;
   color: white;
   margin-bottom: auto;
 }
@@ -71,9 +71,6 @@ iframe {
 }
 .radiobtn {
   margin-left: px;
-}
-#ascending:checked {
-  color: gray;
 }
 label {
   font-size: 14px;
