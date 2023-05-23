@@ -44,9 +44,6 @@ document.querySelector("#descending").addEventListener("click", () => {
 });
 function loaded() {
   document.getElementsByTagName("a")[0].click();
-}
-window.onload = loaded();
-function focused() {
   document.getElementsByTagName("a")[0].focus();
 }
-window.onload = focused();
+window.onload = loaded();
