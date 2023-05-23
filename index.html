@@ -7,32 +7,52 @@
 
     <title>Document</title>
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
-    <h1 id="dis">Javascript Task</h1>
-    <div id="submenu">
-      <div class="container">
+    <h1 id="dis" class="text-center bg-success-subtle p-6">Javascript Task</h1>
+    <div id="submenu" class="d-flex ms-0 px-0">
+      <div class="bg-success-subtle border border-success border-3 p-3">
         <input
           type="text"
-          name=""
+          class="mt-3 ms-4 px-4 w-3 rounded-1"
           id="searchBar"
           placeholder="Search here..."
         />
         <br />
         <br />
         <div class="radiobtn">
-          <input type="radio" id="ascending"  name="order"/>
-          <label class="butn" class="task-order">Ascending</label>
-          <input type="radio" id="descending" name="order"      <label class="butn" class="task-order">Descending</label>
+          <input type="radio" id="ascending" for="ascOrder" class="ms-4" />
+          <label class="butn" name="ascOrder" class="task-order" class="fs-4"
+            >Ascending</label
+          >
+          <input type="radio" id="descending" for="decOrder" />
+          <label class="butn" class="task-order" name="decOrder" class="fs-2"
+            >Descending</label
+          >
         </div>
         <ul id="menu"></ul>
       </div>
-      <iframe name="iframes-list" frameborder="0"></iframe>
+      <iframe
+        name="iframes-list"
+        frameborder="0"
+        class="ratio ratio-1*1"
+      ></iframe>
     </div>
     <script type="module" src="./main.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
