@@ -19,7 +19,7 @@ const render = () => {
   searchBar.addEventListener("keyup", (task) => {
     const searchString = task.target.value.toLowerCase();
     const filteredTasks = tasks.filter((task) =>
-      task.name.toLowerCase().includes(searchString)
+      task.name.toLowerCase().startswith(searchString)
     );
     render_lists(filteredTasks);
   });
