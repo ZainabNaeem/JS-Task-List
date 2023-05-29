@@ -13,16 +13,16 @@ body {
 }
 #menu li a {
   text-decoration: none;
-}
-#menu li a:link {
   color: white;
 }
-
-#menu li a:focus {
-  color: black;
-  outline: none;
+#menu li a:focus,
+:link,
+:visited {
+  font-weight: bolder;
+  background-color: green;
 }
-#menu li :hover {
-  color: black;
-  font-weight: bold;
+#menu :hover,
+:focus {
+  font-weight: bolder;
+  background-color: green;
 }

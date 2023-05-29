@@ -19,7 +19,7 @@ const render = () => {
   searchBar.addEventListener("keyup", (task) => {
     const searchString = task.target.value.toLowerCase();
     const filteredTasks = tasks.filter((task) =>
-      task.name.toLowerCase().includes(searchString)
+      task.name.toLowerCase().startsWith(searchString)
     );
     renderLists(filteredTasks);
   });
@@ -42,8 +42,8 @@ document.querySelector("#descending").addEventListener("click", () => {
   });
   renderLists(tasks);
 });
-function loaded() {
-  document.getElementsByTagName("a")[0].click();
-  document.getElementsByTagName("a")[0].focus();
-}
-window.onload = loaded();
+// function loaded() {
+//   document.getElementsByTagName("a")[0].click();
+//   document.getElementsByTagName("a")[0].focus();
+// }
+// window.onload = loaded();
