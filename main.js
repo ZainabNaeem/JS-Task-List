@@ -4,7 +4,7 @@ const list = document.getElementById("menu");
 const searchBar = document.getElementById("searchBar");
 
 //list display section
-var render_lists = function (lists) {
+var renderLists = function (lists) {
   const ItemList = lists
     .map(
       (tasks) =>
@@ -13,7 +13,7 @@ var render_lists = function (lists) {
     .join("");
   list.innerHTML = ItemList;
 };
-render_lists(tasks);
+renderLists(tasks);
 //task filter section
 const render = () => {
   searchBar.addEventListener("keyup", (task) => {
@@ -21,24 +21,29 @@ const render = () => {
     const filteredTasks = tasks.filter((task) =>
       task.name.toLowerCase().startswith(searchString)
     );
-    render_lists(filteredTasks);
+    renderLists(filteredTasks);
   });
 };
 render();
 //task sorting section
-document.querySelector("#ascending").addEventListener("click", () =>
+document.querySelector("#ascending").addEventListener("click", () => {
   tasks.sort(function (a, b) {
     if (a.name < b.name) {
       return -1;
     }
-    render_lists(tasks);
-  })
-);
-document.querySelector("#descending").addEventListener("click", () =>
+  });
+  renderLists(tasks);
+});
+document.querySelector("#descending").addEventListener("click", () => {
   tasks.sort(function (a, b) {
     if (a.name > b.name) {
       return -1;
     }
-    render_lists(tasks);
-  })
-);
+  });
+  renderLists(tasks);
+});
+function loaded() {
+  document.getElementsByTagName("a")[0].click();
+  document.getElementsByTagName("a")[0].focus();
+}
+window.onload = loaded();

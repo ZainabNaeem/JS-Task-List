@@ -2,76 +2,27 @@ body {
   /* margin-left: 10px; */
   font-family: "Comfortaa", cursive;
 }
-#dis {
-  background: rgb(87, 65, 83);
-  background: radial-gradient(
-    circle,
-    rgba(87, 65, 83, 1) 6%,
-    rgba(181, 168, 189, 0.9809173669467787) 99%
-  );
-  height: 60px;
-  text-align: center;
-  line-height: 55px;
-  color: white;
-  margin-bottom: auto;
-}
-
-#submenu {
-  display: flex;
-}
-.container {
-  border: 2px solid black;
-  /* padding-right: 10px; */
-}
-#menu {
-  padding: 2px;
-}
 #menu li {
-  /* display: flex; */
-
   list-style: none;
   margin-top: 3px;
   margin-left: 0;
-  width: 220px;
-  height: 60px;
-  padding: 5px;
-  border: 1px solid black;
-  background: rgb(87, 65, 83);
-  background: radial-gradient(
-    circle,
-    rgba(87, 65, 83, 1) 6%,
-    rgba(181, 168, 189, 0.9809173669467787) 99%
-  );
+  width: 100%;
+  padding: 8px;
+  border: 1px solid green;
+  background-color: rgb(9, 168, 9);
 }
 #menu li a {
   text-decoration: none;
-  color: white;
-  /* padding-left: 8px; */
 }
 #menu li a:link {
   color: white;
 }
 
-#menu li a:visited {
+#menu li a:focus {
   color: black;
+  outline: none;
 }
 #menu li :hover {
   color: black;
   font-weight: bold;
-}
-iframe {
-  height: 95vh;
-  width: 100%;
-  margin-right: 20px;
-}
-#searchBar {
-  /* margin-left: 30px; */
-  width: 90%;
-  padding: 10px;
-}
-.radiobtn {
-  margin-left: px;
-}
-label {
-  font-size: 14px;
 }
