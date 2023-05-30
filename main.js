@@ -42,8 +42,16 @@ document.querySelector("#descending").addEventListener("click", () => {
   });
   renderLists(tasks);
 });
-function loaded() {
-  document.getElementsByTagName("a")[0].click();
-  document.getElementsByTagName("a")[0].focus();
-}
-window.onload = loaded();
+//on page load click event
+const targetBtn = document.getElementsByTagName("a")[0];
+const clickEvent = new MouseEvent("click", {
+  bubbles: true,
+  cancelable: false,
+});
+targetBtn.dispatchEvent(clickEvent);
+
+const btn = document.querySelector("li");
+btn.addEventListener("click", () => {
+  btn.classList.add("active");
+});
+console.log(btn);

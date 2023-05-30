@@ -8,21 +8,24 @@ body {
   margin-left: 0;
   width: 100%;
   padding: 8px;
-  border: 1px solid green;
+
   background-color: rgb(9, 168, 9);
 }
 #menu li a {
+  color: white;
   text-decoration: none;
 }
-#menu li a:link {
-  color: white;
-}
 
-#menu li a:focus {
-  color: black;
-  outline: none;
-}
-#menu li :hover {
+#menu :hover {
   color: black;
   font-weight: bold;
+  background-color: green;
+}
+#menu :focus-within {
+  color: black;
+  background-color: green;
+}
+.active {
+  color: black;
+  background-color: green;
 }
