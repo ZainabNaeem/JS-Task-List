@@ -1,57 +1,54 @@
-import tasks from "./tasks.json" assert { type: "json" };
-
 const list = document.getElementById("menu");
-const searchBar = document.getElementById("searchBar");
+let taskList = [];
 
-//list display section
-var renderLists = function (lists) {
+const loadTask = async () => {
+  try {
+    const res = await fetch("http://localhost:3000/tasks");
+    taskList = await res.json();
+    renderLists(taskList);
+  } catch (err) {
+    console.error(err);
+  }
+};
+var renderLists = (lists) => {
   const ItemList = lists
     .map(
       (tasks) =>
-        `<li><a href="${tasks.href}" target="iframes-list"> <h4>${tasks.name}</h4></a></li>`
+        `<li><a href="${tasks.href}" target="iframes-list"><h4>${tasks.name}</h4></a></li>`
     )
     .join("");
   list.innerHTML = ItemList;
+  const targetBtn = document.getElementsByTagName("a")[0];
+  const clickEvent = new MouseEvent("click", {
+    bubbles: true,
+    cancelable: false,
+  });
+  targetBtn.dispatchEvent(clickEvent);
 };
-renderLists(tasks);
-//task filter section
+loadTask();
 const render = () => {
   searchBar.addEventListener("keyup", (task) => {
     const searchString = task.target.value.toLowerCase();
-    const filteredTasks = tasks.filter((task) =>
-      task.name.toLowerCase().includes(searchString)
+    const filteredTasks = taskList.filter((task) =>
+      task.name.toLowerCase().startsWith(searchString)
     );
     renderLists(filteredTasks);
   });
 };
 render();
-//task sorting section
 document.querySelector("#ascending").addEventListener("click", () => {
-  tasks.sort(function (a, b) {
+  taskList.sort(function (a, b) {
     if (a.name < b.name) {
       return -1;
     }
   });
-  renderLists(tasks);
+  renderLists(taskList);
 });
 document.querySelector("#descending").addEventListener("click", () => {
-  tasks.sort(function (a, b) {
+  taskList.sort(function (a, b) {
     if (a.name > b.name) {
       return -1;
     }
   });
-  renderLists(tasks);
+  renderLists(taskList);
 });
-//on page load click event
-const targetBtn = document.getElementsByTagName("a")[0];
-const clickEvent = new MouseEvent("click", {
-  bubbles: true,
-  cancelable: false,
-});
-targetBtn.dispatchEvent(clickEvent);
-
-const btn = document.querySelector("li");
-btn.addEventListener("click", () => {
-  btn.classList.add("active");
-});
-console.log(btn);
