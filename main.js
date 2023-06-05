@@ -14,7 +14,7 @@ var renderLists = (lists) => {
   const ItemList = lists
     .map(
       (tasks) =>
-        `<li><a href="${tasks.href}" target="iframes-list"><h4>${tasks.name}</h4></a></li>`
+        `<li class="list-group-item bg-success mt-1 p-3 "><a class="text-light text-decoration-none" href="${tasks.href}" target="iframes-list"><h4>${tasks.name}</h4></a></li>`
     )
     .join("");
   list.innerHTML = ItemList;

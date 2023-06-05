@@ -3,25 +3,27 @@ body {
   font-family: "Comfortaa", cursive;
 }
 #menu li {
-  list-style: none;
-  margin-top: 3px;
-  margin-left: 0;
-  width: 100%;
-  padding: 8px;
+  /* list-style: none; */
+  /* margin-top: 3px; */
+  /* margin-left: 0; */
 
-  background-color: rgb(9, 168, 9);
+  /* padding: 8px; */
+
+  /* background-color: rgb(9, 168, 9); */
 }
 #menu li a {
-  color: white;
-  text-decoration: none;
+  /* color: white; */
+  /* text-decoration: none; */
 }
 
-#menu :hover {
+#menu li a :hover {
   color: black;
   font-weight: bold;
+  outline: none;
   background-color: green;
 }
 #menu :focus-within {
+  outline: none;
   color: black;
   background-color: green;
 }
