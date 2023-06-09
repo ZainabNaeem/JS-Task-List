@@ -5,12 +5,12 @@ const loadTask = async () => {
   try {
     const res = await fetch("http://localhost:3000/tasks");
     taskList = await res.json();
-    renderLists(taskList);
+    setupEventListener(taskList);
   } catch (err) {
     console.error(err);
   }
 };
-var renderLists = (lists) => {
+var setupEventListener = (lists) => {
   const ItemList = lists
     .map(
       (tasks) =>
@@ -32,7 +32,7 @@ const render = () => {
     const filteredTasks = taskList.filter((task) =>
       task.name.toLowerCase().startsWith(searchString)
     );
-    renderLists(filteredTasks);
+    setupEventListener(filteredTasks);
   });
 };
 render();
@@ -42,7 +42,7 @@ document.querySelector("#ascending").addEventListener("click", () => {
       return -1;
     }
   });
-  renderLists(taskList);
+  setupEventListener(taskList);
 });
 document.querySelector("#descending").addEventListener("click", () => {
   taskList.sort(function (a, b) {
@@ -50,5 +50,5 @@ document.querySelector("#descending").addEventListener("click", () => {
       return -1;
     }
   });
-  renderLists(taskList);
+  setupEventListener(taskList);
 });
